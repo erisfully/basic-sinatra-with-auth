@@ -12,7 +12,33 @@ class App < Sinatra::Application
     @user_database = UserDatabase.new
   end
 
-  get "/" do
-    "Hello, world"
+  get '/' do
+    erb :homepage
   end
+
+  get '/register' do
+    erb :registration
+
+  end
+
+  post '/' do
+    flash.now[:notice] = "Thanks for signing up!"
+    erb :homepage
+  end
+
+  post '/login' do
+    redirect('/home')
+
+  end
+
+  get '/home' do
+    erb :userhome
+  end
+
+
+
+
 end
+
+
+
