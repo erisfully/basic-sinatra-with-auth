@@ -22,7 +22,7 @@ class App < Sinatra::Application
   end
 
   post '/' do
-    flash.now[:notice] = "Thanks for signing up!"
+    flash.now[:notice] = "Thanks for signing up!!"
     erb :homepage
   end
 
@@ -34,7 +34,6 @@ class App < Sinatra::Application
   get '/home' do
     erb :userhome
   end
-
 
 
 
