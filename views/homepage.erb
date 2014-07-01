@@ -1,0 +1,49 @@
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>My App</title>
+  <link rel="stylesheet" href="homepage.css">
+</head>
+<body>
+
+<div id='flash' class='notice'>
+  <%= flash[:notice] %>
+</div>
+
+<table align="center">
+  <tbody>
+  <tr>
+    <td>
+      <button style="height:150px; width:250px" onClick="parent.location='/register'"><h1>Register</h1></button>
+    </td>
+  </tr>
+  <tr>
+    <td><h3 align="center">OR</h3></td>
+  </tr>
+  </tbody>
+</table>
+
+<table align="center">
+  <tbody align="left">
+  <form method='post' action='/login'>
+    <tr align="left">
+      <td>Name:</td>
+    </tr>
+    <tr align="left"></td>
+      <td><input type='input' name='user[name]' style=width:250px>
+    </tr>
+    <tr align="left">
+      <td>Password:</td>
+    </tr>
+    <tr align="left"></td>
+      <td><input type='input' name='user[password]' style=width:250px>
+    </tr>
+    <tr align="left"></td>
+      <td>
+        <button style="width:250px" onClick="parent.location='/home'"><h1>Login</h1></button>
+      </td>
+    </tr>
+  </form>
+  </tbody>
+</table>
+
+</body>
