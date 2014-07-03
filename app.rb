@@ -18,7 +18,13 @@ class App < Sinatra::Application
 
   get '/register' do
     erb :registration
+  end
 
+  post '/register' do
+   :username == params[:username]
+   :password == params[:password]
+   @user_database.insert({username: params[:username], password: params[:password]})
+    redirect'/'
   end
 
   post '/' do
@@ -26,16 +32,13 @@ class App < Sinatra::Application
     erb :homepage
   end
 
-  post '/login' do
-    redirect('/home')
-
+  get '/login' do
+    redirect'/home'
   end
 
   get '/home' do
     erb :userhome
   end
-
-
 
 end
 
