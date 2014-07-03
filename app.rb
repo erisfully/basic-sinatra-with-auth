@@ -21,25 +21,28 @@ class App < Sinatra::Application
   end
 
   post '/register' do
-   :username == params[:username]
-   :password == params[:password]
    @user_database.insert({username: params[:username], password: params[:password]})
+   flash[:notice] = "Thanks for signing up!!"
     redirect'/'
   end
 
-  post '/' do
-    flash.now[:notice] = "Thanks for signing up!!"
-    erb :homepage
-  end
 
-  get '/login' do
-    redirect'/home'
-  end
 
-  get '/home' do
+  post '/home' do
+    # "Welcome #{params[:username]}"
     erb :userhome
   end
 
+  # post "/login" do
+      # params[:username]
+      # params[:password]
+  # if database has user with that name
+    # take them to login in homepage
+  # if no user with that name in db
+    # stay on login page and display error
+  # if user with name exists in db but wrong password
+    # display pw error
+  # end
 end
 
 
